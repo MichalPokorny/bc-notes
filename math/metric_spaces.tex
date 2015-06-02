@@ -1,0 +1,58 @@
+\begin{itemize}
+\item Definice metrického prostoru, příklady
+\item Spojitost, otevřené a uzavřené množiny
+\item Kompaktnost
+\end{itemize}
+
+MP: $(M,d)$, $d:M\times M\rightarrow\R$: $d(x,y)=0\leftrightarrow x=y$,
+$d(x,y)=d(y,x)$, $d(x,y)\leq d(x,z)+d(z,y)$ (trojuhelnik)
+
+$d_p(x,y)=(\sum|x_i-y_i|^p)^{1/p}$: $p=1,n=1$ dame $|x-y|$; $p=2,n\geq 2$
+je Euklidovska metrika, $p=1,n\geq 2$ je postacka, $p\rightarrow\infty$
+maximova.
+
+Supremova metrika: $F(X)$ omezene fce $f:X\rightarrow\R$, definuj
+$d(f,g)=\sup_{X}|f(x)-g(x)|$. Trivialni metrika: $\neq\leftrightarrow 1$.
+
+Otevrena koule: $B(x,r)={d(x,y)<r}$, uzavrena ($r$-okoli) $\bar{B}$.
+
+Otevrena $G$: $\forall x\in G\exists B(x,\delta)\subseteq G$.
+Uzavrena: $M\smallsetminus G$ otevreny.
+
+$\emptyset,M$ clopen, konecny $\cap$ open je open, libovolny $\cup$ otevrenych
+je otevrena.
+Libovolny $\cap$ closed je closed, konecny $\cup$ closed je closed.
+
+Uzaver $A := \bar{A}=\cap{\forall F}\{A\subseteq F, F\mathrm{ closed}\}$.
+Vnitrek: $\mathrm{int} A=A^O=\cup\{F\subset A, F\mathrm{ open}\}$
+
+Vzdalenost $A$ od $x :=\inf\{\delta(x,a):a\in A\}$.
+
+$\bar{\emptyset}=\emptyset,\bar{M}=M$.
+$A\subseteq B\rightarrow\bar{A}\subseteq\bar{B}$, $\bar{\bar{A}}=\bar{A}$,
+$\bar{A\cup B}=\bar{A}\cup\bar{B}$.
+$\bar{A}=\{d(,A)=0\}$.
+
+Konvergence k bodu. Kdyz je posl. odnekud $=y$, pak $x_n\rightarrow y$.
+Konvergence k max. jednomu bodu. Vybrana podposl. konverguje stejne.
+
+Ekvivalentni def. uzavrenosti: kazda konvergentni posloupnost v $M$ ma v $M$
+limitu
+
+$(X,\rho),(Y,\sigma)$: $f:X\rightarrow Y$ spojite v $x$:
+$\forall\varepsilon>0 \exists\delta>0:
+\rho(x,y)<\delta\rightarrow\sigma(f(x),f(y))<\varepsilon$
+
+Spojite $\leftrightarrow$ pro kazdou konvergentni $x_n$ v $X$ je $f(\lim
+x_i)=\lim f(x_i)$ $\leftrightarrow$ $\forall x,U$ okoli $f(x)$ $\exists$ okoli
+$V$ kolem $x$ tz. $f[V]\subseteq U \leftrightarrow$ obrazy open/closed
+z $Y$ zobrazenim $f^{-1}(U)$ jsou v $X$ open/closed $\leftrightarrow$
+$\forall M\subseteq X: f[\bar{M}]\subseteq\bar{f[M]}$
+
+TODO: dokazat predchozi tvrzeni (je to vpodstate Heineho veta)
+TODO: specialne ten kus s obrazy vypada zajimave a ten posledni
+
+TODO: stejnomerna spojitost
+TODO: skladani spojitych/stejnomerne spojitych zobrazeni
+TODO: homeomorfismus, aritm. zobrazeni
+TODO: podprostory, kompaktni prostory, uplne prostory

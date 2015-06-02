@@ -1,1 +1,86 @@
-TODO: cisla
+\begin{itemize}
+\item Vlastnosti přirozených, celých, racionálních, reálných a komplexních
+	čísel
+\item Posloupnosti a řady čísel
+\item Cauchyovské posloupnosti
+\end{itemize}
+
+\paragraph{$\R$, $\N$}
+Axiomaticky: $(0,1,+,\cdot)$ je komutativní těleso, $\leq$ je uspořádání co se
+chová rozumně s $+$ a $\cdot$ (tj. posun o číslo, násobení kladným číslem).
+Netrivialita ($0\neq 1$).
+
+TODO: co znamena "rozumne"? co je zac ta vazba?
+
+Úplnost: každá neprázdná shora omezená podmn. má supremum, tj. nejnižší horní
+mez: $\forall x\in X: x\leq s$ a $\forall s'<s\in\R \exists x\in M: x>s'$.
+(Axiom suprema.)
+
+$\N$ z $\R$: induktivní := $1\in S, \forall x\in S: (x+1)\in S \longrightarrow$
+$\N$ průnik induktivních podmn. $\R$.
+
+$\N$ je induktivní. $\forall n\in\N:n\geq 1$,
+$n\neq 0\rightarrow\exists m\in N: n=m+1$, $m<n\rightarrow m+1\leq n$,
+každá neprázdná množina má nejmenší prvek.
+
+Archimedova vlastnost: $\forall x\in\R\exists n\in\N:x<n$.
+
+Peanovy axiomy: $\exists 0, S(x)$. $\notexists x: S(x)=0$. $S(x)\neq S(y)$.
+$\varphi(0)\wedge \varphi(x)\rightarrow\varphi(S(x))\longrightarrow\forall\varphi$.
+Konstrukce na množinách: $S(a)=a\cup\{a\},0=\emptyset$ (axiom nekonečna).
+
+\subsection{$\Z$, $\Q$}
+$\Z$: $\pm\N + 0$, $\Q=\{p/q:p\in\Z,q\in\N\}/\sim$.
+
+$\forall x\in\R\exists [x]\in\Z: x-1<[x]\leq x$
+
+Hustota: $a,b\in\R\rightarrow\exists x\in\Q: a<x<b$; husté je i
+$\R\smallsetminus\Q$.
+
+Existence odmocniny: $\existsone y\geq 0\in\R: y^n=x$
+
+$\C$: $i\gets\sqrt{-1}:i^2+1=0$. Algebraický tvar.
+$|z|=\sqrt{a^2+b^2}$. $\bar{zw}=\bar{z}\bar{w}$, $|z|^2=z\bar{z}$,
+$z^{-1}=\bar{z}/|z|^2$
+
+Goniometrický tvar: $|z|(\cos\varphi+i\sin\varphi)$. Dělící a násobící vzorce,
+"Moiverova věta" na mocnění.
+
+\subsection{Posloupnosti a limity}
+Omezenosti, (ryzí) monotónnosti.
+Vlastní limita. Když ji nemá, diverguje. Existuje nejvýš 1.
+Konvergentní posloupnosti jsou omezené.
+Vybrání podposloupnosti zanechá limitu (existuje-li).
+Nevlastni limita $\pm\infty$. $\R^*$.
+
+Aritmetika limit: $+,\cdot$, $b_i\neq 0,B\neq 0\rightarrow/$
+TODO: prove?
+Pro $\R^*$ funguje je-li výsledek definován.
+
+$\sup\emptyset:=-\infty,\inf\emptyset:=\infty$
+
+Policajti. Soucin mizejici a omezene mizi.
+Podil kladne a mizejici nezaporne jde k $\infty$.
+
+Kazda monotonni posloupnost ma limitu: omezena ma vlastni, jinak nevlastni.
+$\lim\sup$ je limita horních mezí prefixů, obdobně $\lim\inf$ ($\pm\infty$
+jsou-li posloupnost prefixů neomezené). Vždy existují.
+$\lim=a\in\R^*\leftrightarrow\lim\sup=\lim\inf=a$
+
+Hromadný bod: limita vybr. posloupnosti. $\lim\sup=\max H,\lim\inf=\min H$
+
+\subsection{Cauchyovské posloupnosti}
+Bolzano-Weierstrass: omezená má konvergentní podposloupnost.
+Jsou-li $a_n$ v komp. intervalu $[a,b]$, je tam i limita vybr. podposl.
+Můžu třeba vzít $\lim\sup$ a zmenšovat interval.
+
+Cauchyovská (Bolzano-Cauchy podmínka):
+$\forall\varepsilon\exists n_0\forall m,n\geq n_0: |a_n-a_m|<\varepsilon$
+
+Lemma: podposloupnost C posloupnosti konverguje $\rightarrow$ C posl.
+konverguje.
+Bolzano-Cauchy: konvergentní $\leftrightarrow$ Cauchyovská. $\rightarrow$
+hned, pro $\leftarrow$ staci omezenost Cauchyovske posl., Bolzano-Weierstrass
+a lemma. Omezenost: vem treba $\epsilon=1$.
+
+TODO: nejake ty rady, jejich konvergence, srovnavaci kriteria, atd.?
