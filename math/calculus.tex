@@ -1,1 +1,131 @@
-TODO
+\begin{itemize}
+\item Reálné funkce jedné proměnné
+\item Spojitost, limita funkce v bodě (vlastní i nevlastní).
+\item Některé konkrétní funkce (polynomy, racionální lomené funkce, goniometrické a cyklometrické funkce, logaritmy a exponenciální funkce).
+\item Derivace: definice a základní pravidla, věty o střední hodnotě, derivace vyšších řádů.
+\item Některé aplikace (průběhy funkcí, Taylorův polynom se zbytkem).
+\end{itemize}
+
+Limita funkce: $\a\eps\e\delta:x\in P(a,\delta)\imp f(x)\in B(A,\eps)$
+
+Heineho věta: $f$ def. na nějakém $P(a,)$. $\lim_{x\imp a}f(x)=A\in\R^*
+\leftrightarrow$ pro každou $\{x_n\in D(f)\}$ kde $\lim x_n=a,x_n\neq a$
+je $\lim_{\infty}f(x_n)=A$
+
+Idea důkazu: $1\imp 2$: pro $\eps$ okolí najdu $\delta$ okolí $a$, od $n_0$ dál
+OK. $2\imp 1$: sporem $\e\eps\a\delta\e x\in P(a,\delta): f(x)\not\in
+B(A,\eps)$. Zmenšuj $\delta$, dostávej $x$ v $P(a,\delta)$ nekonvergující
+$f(x)$ k $A$ (vzdálené $\eps$), spor.
+
+Má-li fce vlastní limitu, je na $P$ omezená.
+Aritmetika limit pro $+,\cdot,/$.
+
+$\lim f>\lim g\imp\e P$ kde $f>g$.
+$f\leq g$ a $\e\lim f,\lim g \imp \lim f\leq\lim g$.
+$f\leq h\leq g, \e\lim f,\lim g\imp\e\lim h, \lim h=\lim\ldots$.
+
+Limita složené funkce: $\lim_{x\imp a}g(x)=A, \lim_{y\imp A}f(y)=B$
+plus bud $f$ spojita v $A$, nebo $\e\delta>0: g(x)\neq A$ na $P(a,\delta)$
+(vnitrni funkce "lokalne prosta")
+
+Dukaz: vezmi $\eps$, pro nej najdi $\mu$ ze $\mu$-okoli $A$ je mapovane
+$f(x)$ na $\eps$-okoli $B$.
+
+$0<|x-A|<\mu \imp |f(x)-B|<\eps$. Pro $g(x)$ najdu $\delta$ pro $\mu$, ze
+$0<|g-a|<\delta\imp |g(x)-A|<\mu$. Musím se vyhnout $g(x)=A$ (druha
+varianta), nebo kdyz je $f$ spojita, tak to je OK.
+
+Darbouxova veta o nabyvani mezihodnot: $f$ spojita na $<a,b>$, $f(a)<f(b)
+\imp$ nabyva mezihodnot.
+
+Lemma: pokud je spojita $f(x_0)>y$, tak je vetsi i na nejakem $P$
+(vezmi chytre $\eps$).
+Hledejme $x:f(x)=y$. Zkoumej $\{x:f(x)\leq y\}\imp$ vem supremum.
+Kdyz $f(s)>y$, tak by byla vetsi i pro nejaka $x<s$, tedy neni nejmensi horni
+mez. Kdyz $f(s)<y$, tak nekde $x>s$ je $f(s)$ mensi a neni to horni mez.
+TODO: pochopit
+
+$f($interval$)=$interval kdyz je tam spojita.
+
+$f$ spojita na $<a,b>\imp$ nabyva maxima i minima (vezmi $\sup,\inf$)
+Spojita funkce je na uzavrenem intervalu omezena.
+
+$f$ spojita a rostouci/klesajici na $I\imp$ ma inverzi.
+
+\subsection{Konkretni funkce}
+$\existsone\exp$: $\exp(x+z)=\exp(x)\exp(z)$, $\exp(x)\geq 1+x$.
+
+$\lim_{x\imp 0}\frac{\exp x-1}{x}=1$
+
+$\log:=\exp^{-1}$. $\lim_{x\imp 1}\frac{\log x}{x-1}=1$
+Obecna mocnina definovana pres exponencialu.
+
+$\existsone s$ licha a $c$ suda,
+$s>0$ na $(0,1)$, $s(1)=0$, $s(x+y)=s(x)c(y)+c(x)s(y)$,
+$c(x+y)=c(x)c(y)-s(x)s(y)$
+
+$\sin,\cos,\tan,\cotg$ odtamtud, $\arcsin,\arccos,\arctg,\arccotg$.
+Plati: $\lim_{x\imp 0} \frac{\arcsin x}{x}=1,
+	\lim_{x\imp 0} \frac{\arccos x}{\sqrt{1-x}}=\lim_{x\imp 0}\frac{\arctg
+	x}{x}=1$
+
+Derivace $\lim\frac{f(a+\Delta)-f(a)}{\Delta}$, zleva a zprava.
+Ma-li $f$ derivaci, je tam spojita ($\lim_{x\imp a}[f(x)-f(a)]=f'(x)\cdot 0$).
+
+$(f+g)'=f'+g'$ je-li definovano. $f/g$ spojita v $\imp (fg)'=f'g+fg'$.
+
+Derivace slozene funkce: $f$ derivace v $y_0$, $g$ derivace v $x_0$,
+$g$ spojita v $x_0$, $y_0=g(x_0) \imp (f\cdot g)'(x_0)=f'(y_0)\cdot g'(x_0)=
+f'(g(x_0))\cdot g'(x_0)$.
+Dukaz je pracny: upravime $[f(g(x))-f(g(a))]/(x-a)$, rozlozime na $A:
+g(x)=g(a)$, $B: g(x)\neq g(a)$. TODO
+
+Derivace inverzni funkce. TODO dukaz.
+
+Derivace a rust/klesani. Nutna podminka lok. extr: $f'=0$ nebo $\not\exists$.
+
+Rolleova věta: $f$ spojita na $<a,b>$, $\e f'$ na $(a,b)$, $f(a)=f(b)\imp
+f'(c)=0$ (ma-li lokalni extrem, hotovo, jinak je to konstanta).
+Lagrangeova o střední hodnotě: zobecni.
+
+Cauchyova věta o střední hodnotě: $f,g$ spoj. na $<a,b>$ a na $(a,b) \e$
+derivace a $g'$ vlastni $\neq 0\imp$
+$\e c\in(a,b): \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(c)}{g'}$
+Intuice: tecna v parametrickem plotu $[f,g]$ je spojnice.
+Dosad do Rolleovy vety $f(x)+\alpha g(x)\imp\e c: \frac{f'(c)}{g'(c)}=\alpha$
+
+L'Hospitalovo pravidlo: $a\in\R^*$, $f,g$ na $P(a,\delta)$ s vlastni derivaci,
+$g'\neq 0$, $\e\lim_{x\imp a}\frac{f'(x)}{g'(x)}$ a
+bud $(\imp a): \lim f(x)=\lim g(x)=0$, nebo $\lim g(x)=\pm\infty$.
+Pak $\e\lim f/g=\lim f'/g'$.
+
+Limita derivaci: $f$ spojita zprava, pro $a\in\R \e\lim_{x\imp
+a^+}f'(x)=A\in\R^*$. Pak $f'_+(a)=A$.
+TODO: to asi neni uzitecny
+
+Derivace a monotonie spojite $f$.
+
+Inflexe: prstencove okoli vlevo pod a vpravo nad tecnou.
+$f''(x)\neq 0\imp$ neni inflexe.
+Spojita $f'$ a $f''(<x)>0$ a $f''(>x)<0\imp$ inflexe.
+(ryzi) konvexita/konkavnost.
+
+$f$ konvexni na $I$, $a\in Int(I)\imp\e f'_\pm(a)\in\R$ (konvexnost implikuje
+jednostranne derivace)
+Konvexnost $\imp$ spojitost.
+
+Asymptota $ax+b$: $f$ definovana na okoli $\pm\infty$,
+$\lim_{x\imp\pm\infty}(f(x)-ax-b)=0$.
+$\leftrightarrow\lim f(x)/x=a \wedge \lim f(x)-ax=b$
+
+\subsection{Aplikace}
+
+Vysetreni prubehu: $D$, obor spojitosti, symetrie/periodicita,
+limity v krajich $D$, derivace a intervaly monotonie, lok. a glob. extremy,
+obor hodnot, druha derivace a kon/kon, inflexni body, asymptoty, graf.
+
+Taylorak: $T_n^{f,a}(x)=\sum f^{(i)}(a)\frac{(x-a)^n}{i!}$.
+Jednoznacny $\lim_{x\imp a}\frac{f(x)-T_n^{f,a}(x)}{(x-a)^n}=0$ stupne $\leq n$.
+
+TODO: obecny tvar zbytku a dukaz, Lagrangeuv a Cauchyho tvar zbytku,
+Newtonova metoda.

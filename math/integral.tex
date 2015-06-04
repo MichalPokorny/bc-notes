@@ -1,0 +1,67 @@
+\begin{itemize}
+\item Primitivní funkce, metody výpočtu
+\item Určitý (Riemannův) integrál, užití určitého integrálu
+\item Vícerozměrný integrál a Fubiniho věta
+\end{itemize}
+
+$F$ je primitivní, když $F'=f$. $G(x)=F(x)+C$. Linearita.
+Spojité funkce mají primitivní funkce.
+
+Substituce: 1. $\int f(\varphi(t))\varphi'(t)dt=F(\varphi(t))+C$.
+
+TODO: TOHLE MUSIM UMET
+2. $G(t)=\int f(\phi(t))\phi'(t)dt$ na $(\alpha,\beta)$, $\phi'\neq 0$ a ma
+	$\phi'$, $\phi((\alpha,\beta))=(a,b) \imp \int f(x) dx=G(\phi^{-1}(x))$
+
+Per partes: $\int u'v=uv-\int uv'$
+
+Polynomy jdou dělit. Mají $k$ komplexních kořenů.
+Polynomy s reálnými koeficienty mají komplexně združené kořeny.
+Polynomy s reálnými koeficienty jdou rozdělit na kořenové činitele
+a polynomy stupně 2. Přes tohle si převedu zlomek polynomů na parciální zlomky.
+
+Riemannův integrál: dělení intervalu konečně mnoha dělícími body s nějakou
+jemností. $S(f,D)=\sum \sup \cdot (x_j-x_{j-1}$ a podobne $s(f,d)$.
+Horni Riemannuv integral: $\inf\{S\}$, dolni: $\sup\{s\}$.
+Ma Riemannuv integral: rovna se horni a dolni.
+
+Je-li funkce omezena, pak ma integral prave kdyz pro kazde $\eps>0$
+existuje deleni, ze $S(f,D)-s(f,D)<\eps$.
+Monotonie a linearita Riemannova integralu.
+Spojite funkce maji Riemannuv integral. (Dokonce: omezena a spojita s vyjimkou
+konecne mnoha $\imp$ existuje integral)
+Aditivita.
+Omezena a monotonni funkce $\imp$ Riemannovsky integrovatelna.
+Riemannuv integral funguje jako primitivni funkce.
+
+Zakladni veta analyzy: $f$ spojita na $<a,b>$, $F$ primitivni k $f$ na
+$(a,b)\imp\e$ vlastni limity $\lim_{a\imp a^+}F(x)$ a $\lim_{x\imp b^-}F(x)$
+a plati: $\int_a^b f=\lim_{x\imp b-}F(x)-\lim_{x\imp a+}F(x)$.
+Newtonuv integral: kdyz mame primitivni funkci, tak je to presne tenhle rozdil
+limit. Riemannovsky a Newtonovsky integral se rovnaji. Riemannovska a
+Newtonovska integrovatelnost spolu nesouvisi.
+Nekonecne integraly jsou vzdycky Newtonovske.
+
+Délka křivky: $\int_a^b \sqrt{1+(f'(x))^2}dx$.
+Objem rotačního tělesa: $V=\pi\int_a^b f(x)^2 dx$.
+
+$f$ spojita, nezaporna a nerostouci na $<n_0-1,\infty> \imp$
+$\sum_n=1^\infty f(n)$ konverguje $\leftrightarrow (N)\int_{n_0}^\infty
+f(t)dt<\infty$.
+
+Kompaktni interval ve vice rozmerech, rozdeleni po slozkach.
+Vicerozmerny Riemannuv integral $\leftrightarrow\a\eps>0\e D:
+S(f,D)-s(f,D)<\eps$.
+
+$|\int_J f|\leq \int_J |f|$.
+Fubiniho veta: spojitou funkci muzu vicerozmerne integrovat v libovolnem
+poradi: $\int_J f(\vec{x},\vec{y})
+d\vec{x}\vec{y}=\int_{J'}(\int_{J''}f(\vec{x},\vec{y})d\vec{y})d\vec{x}=\int_{J''}(\int_{J'}
+f(\vec{x},\vec{y})d\vec{x}) d\vec{y}$
+
+Parcialni derivace: limita o epsilon-krok.
+Jacobiho matice $\vec{f}:D\imp\R^n$: $\left(\frac{\partial f_i}{\partial
+x_j}(a)\right)^{n,m}_{i,j=1}$. Determinantu se rika Jakobian.
+Regularni zobrazeni: nezaporny Jakobian ve vsech bodech.
+
+% Vynechavam veta o substituci pro vicerozmerne funkce.
