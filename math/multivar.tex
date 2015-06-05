@@ -1,0 +1,72 @@
+\begin{itemize}
+\item Parcialni derivace a totalni diferencial.
+\item Vety o stredni hodnote.
+\item Extremy funkci vice promennych.
+\item Veta o implicitnich funkcich.
+\end{itemize}
+
+Parcialni derivace, derivace ve smeru, gradient.
+Totalni diferencial: existuje-li $\lim_{\|h\|\imp 0}
+\frac{f(X+h)-f(X)-Df(X)(h)}{\|h\|}=0$
+
+Druhy diferencial: $D^2 f(a)(h,k)=\sum\sum\frac{\partial^2 f}{\partial
+x_i\partial x_j}(a)h_i h_k$
+
+Bilinearni formy: pozitivne/negativne definitni, indefinitni.
+Sylvestrovo kriterium: vsechny hlavni subdeterminanty kladne $\imp F$ pozitivne
+definitni. (Alternujici znamenka: negativne definitni.)
+
+Ma-li $f$ totalni diferencial, tak $D_v f(a)$ jsou pro $v\neq o$ vlastni a $D_v
+f(a)=Df(a)(v)$ a $Df(a)(h)=\langle\nabla f(a),h\rangle$ a $\partial f$ vsechny
+existuji a $f$ je spojita v $a$. Totalni diferencial ma aritmetiku jako
+derivace.
+
+Retizkove pravidlo (diferencial slozeneho zobrazeni): $\frac{\partial
+H}{\partial x_i}(a)=\sum_{j=1}^n \frac{\partial f}{\partial y_i}(b)
+\frac{\partial g_j}{\partial x_i}(a)$
+
+Totalni diferencial existuje kdyz jsou spojite vsechny $\partial$.
+Druhy diferencial existuje kdyz jsou spojite vsechny $\partial^2$.
+Kdyz je $\partial^2 f/\partial x\partial y$ spojita, tak se da zamenit poradi.
+
+Veta o stredni hodnote:
+$f$ ma vsechny $\partial$ spojite na $(a,b)\imp\e\xi\in(0,1):$
+$$f(b)-f(a)=\nabla f(a+\xi(b-a))\cdot (b-a)=\sum_{i=1}^n \frac{\partial
+f}{\partial x_i}(a+\xi(b-a))(b_i-a_i)$$
+Dukaz z Lagr. vety pro $F(t)=f(a+t(b-a))$ a retizku.
+
+Veta o implicitni funkci pro $\R^2$:
+$F([x,y]):\R^2\imp\R$ at ma spojite $\partial$. At $x_0,y_0\in\R$ s.t.
+$F([x_0,y_0])=0$, $\frac{\partial F}{\partial y}([x_0,y_0])\neq 0$.
+Pak $\e U:P(x_0),V:P(y_0):\a x\in U \existsone y=\varphi(x)\in V: F([x,y])=0$.
+Navíc $\frac{\partial\varphi}{\partial x}(x)=-\frac{\frac{\partial F}{\partial
+x}}{\frac{\partial F}{\partial y}}([x,\varphi(x)])$
+
+Pro $\R^{n+1}$:
+$F:G\imp\R$, $G\subseteq\R^{n+1}$ otevrena. $x_0\in\R^n,y_0\in\R$ s.t.
+$[x_0,y_0]\in G, F([x_0,y_0])=0$. At $F$ ma spoj. $\partial$ a $\frac{\partial
+F}{\partial y}([x_0,y_0])\neq 0$. Pak $\e U:P(x_0),V:P(y_0):\forall U\existsone
+y=\varphi(x)\in V:F([x,y])=0$, $\varphi$ ma spojite $\partial$ a
+$\frac{\partial\varphi}{\partial x_i}(x)=-\frac{\frac{\partial F}{\partial
+x_i}}{\frac{\partial F}{\partial y}}([x,\varphi(x)])$
+
+TODO: jsou nejake jine vety o stredni hodnote?
+
+TODO TODO TODO
+
+Stacionarni bod: vsechny $\partial$ existuji a jsou 0.
+Pokud v lok. extr. existuji vsechny $\partial$, jsou 0.
+
+At ma $F$ spojite $\partial$ druheho radu. Kdyz $Df(a)=0$,
+tak:
+$D^2 f(a)$ pozitivne definitni $\imp a$ lokalni minimum, negativne $\imp$
+maximum, indefinitni $\imp$ neni lokalni extrem.
+
+TODO: Veta o vazanych extremech (Lagrangeovy multiplikatory):
+At $G\subseteq\R^n$ je otevrena. $F,g_1,\ldots g_m$, $m<n$, at maji vsechny
+spojite $\partial$. $M:=\{g_1(x)=\ldots g_m(x)=0\}$.
+Kdyz $a=[a_1,\ldots a_n]$ je lok. extrem $F$ na $M$ a $\nabla g_1(a),\ldots
+\nabla g_m(a)$ jsou linearne nezavisle, tak $\e\lambda_1\ldots\lambda_m$:
+$DF(a)+\lambda_1 D_{g_1}(a)+\ldots\lambda_m D_{g_m}(a)=0$.
+(Neboli: $\frac{\partial F}{\partial x_i}(a)=\sum_{k=1}^m \lambda_k
+\frac{\partial g_k}{\partial x_i}(a)$)
