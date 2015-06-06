@@ -1,0 +1,160 @@
+\begin{itemize}
+\item Architektury databázových systémů.
+\item Konceptuální, logická a fyzická úroveň pohledu na data.
+\item Algoritmy návrhu schémat relací, normální formy, referenční integrita.
+\item Transakční zpracování, vlastnosti transakcí, uzamykací protokoly,
+zablokování.
+\item ER-diagramy, metody návrhu IS.
+\item Přehled SQL.
+\end{itemize}
+
+Databáze: logicky uspořádaná kolekce souvisejících dat.
+Uspořádána tak, aby uměla dotazy. Obsahuje metadata (schema).
+
+DBMS: frontend k databázi (integrita, provádění dotazů atd.)
+
+Účel: sdílení více uživatelovi, unifikované rozhraní, znovuvyužitelnost,
+bezespornost, odebrání redundance.
+
+Schemata se dají organizovat různými modely.
+"Flat model", relační model (relace v tabulkach, atributy, domeny),
+hierarchicky (XML), sitovy (jako KG), objektove ("serializace objektu")
+
+Centralizovane/distribuovane, jednouzivatelske/viceuzivatelske
+Distribuovane: federativni (bez glob. rizeni). Heterogenni: unified query
+interface pres nekolik DBMS.
+
+Vice uzivatelu: uzamykani/multiversion concurrency control (commit)
+
+Datové modelování: vyrobení schematu aplikací abstraktního datového modelu.
+Konceptuální schéma: entity a vztahy. Logické schéma: implementace v databázi.
+Fyzické schéma: jak je to uložené, kde a jak to poběží.
+
+Entity-relationship diagram: kolecko = atribut, muze se rozdelit na subkolecka.
+Cerne kolecko = klic. Entity jsou ctverecky, kosoctverec = relationship.
+Slozeny klic: carka a klicove kolecko.
+
+\verb#[Osoba] --N-- <MistoNarozeni> --1-- [Misto]#
+
+Logicke schema: jak to udelame, napriklad pomoci relacnich tabulek, trid,
+nebo XML. Fyzicke schema: jak se to ulozi.
+
+Relacni algebra:
+\begin{itemize}
+\item Prejmenovani: $\langle R,R(A_i\rightarrow B_i)\rangle$.
+\item Sjednoceni: $\langle R_1,R_1(A)\rangle\cup\langle R_2,R_2(A)\rangle$
+\item Rozdil mnozin: $\langle R_1,R_1(A)\rangle - \langle R_2,R_2(A)\rangle$
+\item Kartezsky soucin: $\langle R_1,R_1(A)\rangle\times\langle R_2,R_2(B)\rangle$
+	(bacha -- prejmenuj stejne sloupce na $R_1 A_1, R_2 A_2,\ldots$)
+\item Selekce: $\langle R(atribut=hodnota), R(A)\rangle$
+\item Projekce: $\langle R[C],R(A)\rangle$: nech jenom atributy $C$ a odeber
+duplikaty.
+\end{itemize}
+Z toho se da postavit:
+\begin{itemize}
+\item Prunik
+\item Natural join ($\star$): spojeni pres vsechny sdilene atributy
+\item Deleni: $\langle\{t:\forall s\in S:(ts)\in R\}, R_x(A-B)\}$
+\end{itemize}
+
+Relacni kalkul. Domenovy: data na urovni atributu, N-ticovy: data na urovni
+N-tic.
+
+Algoritmy navrhu relacnich schemat.
+Normalni formy.
+
+Update anomany: zmenim-li redundantni data, musim zmenit i kopie.
+Insertion anomaly: pri vlozeni dat o jedne entite je potreba vlozit i jinou
+entitu (napriklad \verb#(fakulta,kurz,datum zalozeni)#).
+Deletion anomaly: je potreba vymazat i jinou entitu kdyz mazu jednu.
+
+Spojeni vyslednych relaci jsou vsechny puvodni informace.
+
+Funkcni zavislosti: $A\imp B$. Definuji se pro mnoziny atributu.
+Armstrongova pravidla: $\supseteq\imp\imp$, tranzitivita, kompozice/dekompozice
+($X\imp Y,Z\Rightarrow X\imp YZ$).
+Superklíč: každá podmnožina, na níž schéma funkčně závisí.
+(potenciální) Klíč (candidate key): minimální superklíč.
+Atribut v nějakém klíči: klíčový, jiné: neklíčové.
+
+\begin{itemize}
+\item 1NF: jenom jednoduché datové typy.
+\item 2NF: 1NF + existuje klic a vsechna neklicova pole jsou funkci
+	\textbf{celeho} klice (ne jenom jeho casti). Priklad ne-v-2NF:
+	\verb#(Name,Skill,Address)#.
+\item 3NF: kazdy neklicovy atribut je zavisly \textbf{primo} na klici
+	(ne jenom tranzitivne).
+	Priklad ne-v-3NF: \verb#(DeptID,DeptName,ManagerID,ManagerHireDate)#
+	(vadi HireDate).
+\item Boyce-Codd NF: pro kazdou netrivialni $X\imp Y$ plati, ze $X$ je nadklic.
+\end{itemize}
+
+Dva pristupy: A) ER $\imp$ tabulky ktere znormalizuji, B) univerzalni schema
+$\imp$ normalizace.
+A hrozi rozdrobenim, B neni transparentni.
+
+Rozdeleni na podschemata musi byt bezeztratove ($A_1\cap A_2\rightarrow A_1$
+nebo $A_2$ pro rozdeleni $A$ na $A_1$, $A_2$). Plus: uzaver funkcnich
+zavislosti vlevo $\cup$ vpravo musi byt stejny jako byl puvodne
+(priklad spatne: \verb#Company-HQ-Altitude ==> Company-Altitude, Company-HQ#).
+
+Dekompozice do BCNF. Zarucuje bezeztratovost, ale ne pokryti zavislosti.
+(U BCNF to nemusi jit.):
+vyber schema co neni v BCNF, vezmi neklicovou zavislost $X\imp Y$ (kde $X$
+neni klic), odtrhni $XY$ do tabulky.
+
+Synteza do 3NF: Zarucuje pokryti zavislosti, ale ne bezeztratovost.
+1. ze zavislosti $F$ udelej minimalni pokryti $G$,
+2. ze zavislosti $G$ se stejnou levou stranou udelej z kazde jedno schema,
+3. zahod schemata co jsou podmnoziny jinych.
+Nakonec muzu sloucit schemata s funkcne ekviv. klici ($K_1\leftrightarrow K_2$),
+ale to muze porusit 3NF! Pro bezeztratovost lze pridat schema s univerzalnim
+klicem puvodniho schematu.
+
+Minimalni pokryti: 1. dekomponuj na elementarni (1 sloupec vpravo), 2. odstran
+redundantni atributy (vlevo zavisejici na jinych vlevo), 3. odeber redundantni
+funkcni zavislosti (tj. jsou trans. dusledkem jinych).
+
+Referencni integrita: zabranovani vzniku chyb v relacne provazanych datech.
+ON UPDATE/ON DELETE: podminka spusteni akce.
+Akce: RESTRICT: nahlasi chybu. CASCADE: kaskadove smazani.
+SET NULL. SET DEFAULT (pevna hodnota). NO ACTION.
+
+TODO: kam se tohle strka?
+
+Transakce: COMMIT/ROLLBACK prikazy.
+ACID: atomicity (cela nebo nic), consistency (z konzistentniho do
+konzistentniho), isolation, durability (efekty jsou nevratne ulozeny a nemuzou
+se zrusit).
+
+Rozvrh. Legalni rozvrh: objekt uzamceny kdyz k nemu pristupuju, nezamykam
+jiz zamceny objekt (pockam si).
+Serializovatelny/usporadatelny: jako nejaky seriovy rozvrh.
+Problemy (konflikty): write-write (prepsani nepotvrzenych), read-write
+(neopakovatelne cteni), write-read (cteni uncommitted dat).
+
+Konfliktove usporadatelny: konfliktove ekvivalentni nejakemu seriovemu rozvrhu
+(tj. zadne konflikty). Test: acyklicnost grafu, hrany jsou konflikty,
+vrcholy jsou transakce. Slabsi nez usporadatelnost (nezohlednuje ROLLBACK,
+INSERT/DELETE, atd.).
+K zotavitelnosti: kazdou $T$ potvrd az kdyz potvrdis vsechny transakce co $T$
+davaly data.
+Deadlock. Da se detekovat.
+
+Uzamykaci protokoly.
+2PL: nejdriv zamkne vsechno, pak jenom odemyka. Pokud jsou vsechny transakce
+2PL, kazdy legalni rozvrh je usporadatelny. (TODO: WTF?)
+Nezarucuje zotavitelnost, bezpecnost proti kask. ruseni, uvaznuti.
+
+Strict 2PL: uvolni zamky az po commitu. Mensi paralelismus.
+
+Conservative 2PL: popros o zamky nez se zacnes vykonavat (prevence deadlocku).
+
+RW-LOCK.
+Strukturovane zamykani - hierarchie/strom.
+Casova razitka.
+
+Optimisticky protokol: 1. cteni, 2. kontrola, 3. zapis.
+
+TODO: "metody navrhu IS"?
+TODO: prehled SQL
