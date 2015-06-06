@@ -1,0 +1,54 @@
+\begin{itemize}
+\item Uspořádané množiny
+\item Množinové systémy, párování, párování v bipartitních grafech (systémy
+různých reprezentantů)
+\item Kombinatorické počítání
+\item Princip inkluze a exkluze
+\end{itemize}
+
+Relace: ireflexivni: $xRy\imp x\neq y$. Antisymetricka: $xRy\wedge yRx\imp x=y$
+Ekvivalence: symetricka, reflexivni, tranzitivni
+Usporadani: reflexivni, tranzitivni a antisymetricka
+Linearni usporadani; bezprostredni predchudce
+"Po slozkach": $(a,b)\leq(c,d):=a\leq_1 c \wedge b\leq_2 d$,
+lexikograficky.
+
+Predusporadani: reflexivni a tranzitivni (nemusi byt antisymetricka)
+
+Spernerova věta: nezávislý systém podmnožin má nejvýš $\binom{n}{\lfloor
+n/2\rfloor}$ množin
+
+TODO: dobre usporadani? Zermelova veta/princip dobreho usporadani?
+
+Parovani: podmnozina hran, vrchol maximalne u jedne.
+Hallova veta: existuje SRR $\leftrightarrow \forall J\subseteq I:
+|\bigcup_{j\in J}M_j|\geq |J|$
+Perfektni parovani. Maximalni parovani.
+
+Specialne pro bipartitni graf: $\deg u\geq\deg v\forall u\in A,v\in
+B\rightarrow$ existuje parovani velikosti $A$. Kdyz mam v bip. grafu
+vsechny vrcholy stejneho stupne, ma perfektni parovani.
+
+Tutteho veta: $G$ ma PP $\leftrightarrow \forall A\subseteq V:$
+$c_l(G\smallsetminus A)\leq |A|$ (pocet lichych komponent je mensi nez velikost
+mnoziny).
+
+Edmondsuv algoritmus: kontrakce kyticky, nebo stridava cesta.
+
+Existuje $2^{n-1}$ lichych/sudych podmnozin.
+Prostych zobrazeni z $[n]$ do $[m]$: $m(m-1)\ldots (m-n+1)$
+
+$\binom{n}{k}=\binom{n}{n-k}$. $\binom{n-1}{k-1}+\binom{n-1}{k}=\binom{n}{k}$.
+
+Nezaporne cislo $m$ jde zapsat jako soucet $r$ scitancu pres
+$\binom{m+r-1}{r-1}$ zpusobu.
+
+Binomicka veta: $(x+y)^n=\sum_{k=0}^n\binom{n}{k}x^k y^{n-k}$
+(Multinomicka veta pro vice scitancu.)
+
+Princip inkluze a exkluze:
+$\left|\bigcup_{i=1}^m A_i\right|=\sum_{k=1}^n (-1)^{k-1}
+\sum_{I\in\binom{[n]}{k}}|\bigcap_{i\in I}A_i|$
+TODO: dukaz
+
+% Kaslu na projektivni roviny a latinske ctverce
