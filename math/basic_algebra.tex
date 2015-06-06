@@ -1,0 +1,73 @@
+\begin{itemize}
+\item Grupa, okruh, teleso - definice, priklady
+\item Malá Fermatova věta
+\item Dělitelnost a ireducibilní rozklady polynomů
+\item Rozklady polynomů na kořenové činitele pro $\R$, $\Q$, $\C$ koeficienty
+\item Násobnost kořenů a jejich souvislost s derivacemi mnohočlenu
+\end{itemize}
+
+Algebra: zobrazení s aritou. 1 binární: grupoid. Asociativní s neutr. prvkem:
+monoid. Existuji-li inverzni prvky, jsou stejne zleva a zprava.
+Grupa, abelovská grupa.
+
+Okruh: $(R,+,-,0)$ komutativní, $(R,\cdot,1)$ monoid, $a(b+c)=ab+ac$,
+$(a+b)c=ac+bc$. Napriklad $\Z_N$, lin. zobrazeni.
+
+$0a = a0 = 0$. $(-a)b=a(-b)=-(ab)$. $(-a)(-b)=ab$. $|R|>0\leftrightarrow 0\neq
+1$.
+
+Těleso: okruh s dělením, $0\neq 1$. Komutativní: má komutativní $\cdot$.
+
+Veta (Wedderburnova): vsechna konecna telesa jsou komutativni.
+
+Mala Fermatova veta: kdyz $a\perp n$, tak $a^\varphi(n)\equiv 1\pmod n$.
+Dokaze se z $a^|\Z_n^*|\pmod n=1$, coz plati protoze to je cyklicka grupa,
+rad podgrupy deli rad grupy.
+
+Delitelnost a ireducibilni rozklady polynomu.
+KMK: $\a a,b,c: ac=bc\imp a=b$. $a|b:=\e c: b=ac$. $a||b:=a|b\wedge b|a$.
+OI: komutativni okruh, kde $ab=0\rightarrow a=0\vee b=0$.
+Pro kazdy OI je $(R\smallsetminus\{0\},\cdot,1)$ KMK.
+
+(Faktoralgebra dle $||$ uvnitr KMK.)
+
+NSD: $\a i: c|a_i$ a kdyz $\a i: d|a_i$, tak $d|c$.
+
+Ireducibilni prvek: neinvertibilni a $c=ab\rightarrow c\|a\vee c\|b$.
+Prvočinitel: není invertibilní a $c|ab\rightarrow c|a\vee c|b$.
+
+V KMK je kazdy prvocinitel ireducibilni. Kdyz maji kazde 2 prvky NSD,
+pak je kazdy ired. prvek prvocinitel.
+% Vynechano: Vlastnosti NSD (d=NSD(a,b)&e=NSD(ac,bc) ==> dc||e,
+%	1=NSD(a,b)&a|bc&NSD(ac,bc) existuje ==> a|c
+
+Polynomy: definovane nad okruhem a monoidem ($R[M]$). $R[\N_0]$: polynomy.
+$R[x]$ je OI $\leftrightarrow x$ je OI.
+$deg([])=-1$. $deg(pq)\leq deg(p)+deg(q)$
+
+Eukleidovsky obor integrity: Eukleidovska funkce: $a|b,b\neq 0\imp v(a)\leq
+v(b)$, da se najit zbytek po deleni z mensi E. fci. Eukleiduv algoritmus.
+
+Rozklady na korenove cinitele.
+Polynom je ireducibilni, kdyz neni soucin polynomu nizsich stupnu, stupen $\geq
+1$. Az na asociovanost je jednoznacny rozklad.
+$j_\alpha:R[x]\rightarrow S$ pro $\alpha\in S$ dosazovaci homomorfismus.
+Koren: $j_\alpha=0$
+Na OI je $\alpha$ koren $\leftrigharrow (x-\alpha)|p$.
+
+Algebraicky uzavrene teleso: kazdy polynom ma koren.
+$\C$ je priklad. $\R$ koeficienty $\imp$ koreny jsou komplexne sdruzene.
+Kazdy polynom v $\R[x]$ licheho stupne ma aspon jeden realny koren.
+
+V $\Q$ $\e$ ireducibilni polynomy libovolneho stupne $\geq 1$.
+TODO: nemam dukaz.
+
+V $\R$ $\e$ ired. polynomy stupne 2.
+
+Kazdy nenul. polynom ma $\leq\deg p$ korenu. Vicenasobny koren
+$\leftrightarrow$ koren derivace.
+
+Charakteristika OI: rad grupy generovane jednickou v +.
+Derivace snizuje stupen (n-1).
+$NSD(p,p')=1\leftrightarrow$ nema nasobne koreny.
+V OI $x^n-1$, $x^{n+1}-x$ nemaji vicenasobny koren (kdyz char nedeli $n$).
