@@ -1,0 +1,31 @@
+\begin{itemize}
+\item Definice, základní vlastnosti determinantu
+\item Úpravy determinantu, výpočet.
+\item Geometrický smysl determinantu.
+\item Minory a inverzní matice.
+\item Cramerovo pravidlo.
+\end{itemize}
+
+$\det A=\sum_{\sigma} sgn(\sigma)\prod a_{i,\sigma(i)}$
+
+$\det A=\det A^T$ protoze $sgn(p)=sgn(p^{-1})$.
+
+Prerovnani radku muze otocit znamenko je-li to licha permutace.
+
+Determinant je lin. funkce kazdeho radku a kazdeho sloupce:
+$\det((stuff) radek a (stuff))+\det((stuff) radek b (stuff))=\det((stuff) radek
+a+b (stuff))$
+
+$\det(AB)=\det(A)\det(B)$
+Vypocet pres Gaussovu eliminaci.
+Geometricky vyznam: pravotocivy/levotocivy objem.
+
+Determinant $A_{ij}$ := minor $a_{i,j}$ matice $A$
+$\det(A)=\sum a_{i,j}(-1)^{i+j}\det(A_{ij})$
+
+Adjungovana matice: $(adj A)_{i,j}=(-1)^{i+j}\det(A_{ji})$
+$A^{-1}=(adj A)/\det(A)$, protoze to da rozvoj podle radku nebo matici
+s opakovanim radku.
+
+Cramerovo pravidlo: $x=det(A_i)/det(A)$, kde $A_i$ dostanu nahrazenim $i$-teho
+sloupce $b$ckem. Dukaz pres $adj$.

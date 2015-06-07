@@ -1,0 +1,52 @@
+\begin{itemize}
+\item Vlastní čísla a vlastní hodnoty lineárního operátoru, resp. čtvercové
+matice.
+\item Výpočet, základní vlastnosti.
+\item Uvedení matice na diagonální tvar v případě různých vlastních čísel.
+\item Informace o Jordanově tvaru v obecném případě.
+\end{itemize}
+
+$Ax=\lambda x$, $|A_\lambda I|=0$.
+Podobnost: $B=P^{-1} AP$.
+Diagonalizovatelnost: podobna diagonalni matici.
+Diagonalizovatelny linearni operator.
+
+$\chi_A$ je polynom stupne $n$, vedouci koeficient $=(-1)^n$.
+Koreny jsou prave $\lambda$'s.
+$A$ ma $n$ vlastnich cisel, kdyz je pocitame (nasobnost korene)-krat.
+Kdyz je $A$ realna, tak ma komplexne sdruzena vlastni cisla.
+
+Determinant = součin vlastních čísel.
+Trace = součet vlastních čísel.
+Vlastní čísla reálné symetrické matice jsou reálná.
+Podobne matice maji stejny charakteristicky polynom:
+$\det(P^{-1}AP-tI)=\det(P^{-1})\det(A-tI)\det(P)$.
+
+$AB$ ctvercove stejneho typu $\imp AB$, $BA$ maji stejna vlastni cisla.
+
+Matice je diagonalizovatelna prave kdyz $\e$ baze z jejich vlastnich vektoru.
+$AR=RD$, sloupce $R$ jsou vlastni vektory prislusne vlasnim cislum.
+Kdyz jsem diagonalizovatelna, tak na te diagonale mam vsechna vlastni cisla.
+
+Vlastni vektory ruznych vlastnich cisel jsou linearne nezavisle.
+$n$ ruznych vlastnich cisel $\rightarrow$ diagonalizovatelna.
+
+Diagonalizovatelnost $\leftrightarrow$
+algebraicka nasobnost vsech $\lambda$ je $\dim Ker(A-\lambda I)$.
+
+Spektralni veta: $A$ diagonalizovatelna $\leftrightarrow \e E_1\ldots E_t$
+řádu $n$, kde $A=\lambda_1 E_1+\ldots \lambda_t E_t$,
+$\a i: E_i^2=E_i$, $E_i E_j=0$, $\sum E_i=I_n$.
+
+Dale pro $A$ plati: $E_t$ jsou jednoznacne urcene matici $A$ a vlastnostmi,
+hodnost kazde $E_i$ je alg. nasobnost $\lambda_i$,
+pro libovolny polynom $f(x)=c_0+c_1 x+\ldots c_k x^k$ s kompl. koef. plati
+$f(A)=c_0 I_n + c_1 A+\ldots c_k A^k$.
+$AB=BA$ prave kdyz komutuje s kazdou matici $E_t$.
+
+(Ale tohle se snad hodit moc nebude.)
+
+Jordanova bunka: lambdy na diagonale, 1 hned nad diagonalou.
+Velikost Jordanovy bunky je $rank(A-\lambda I)$.
+
+Hermitovska transpozice: $A^H=\bar{A^T}$. Unitarita: $A=A^H$.
