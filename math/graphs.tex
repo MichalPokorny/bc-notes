@@ -1,0 +1,86 @@
+\begin{itemize}
+\item Základná pojmy teorie grafů, reprezentace grafu.
+\item Stromy a základní vlastnosti, kostra grafů.
+\item Eulerovské a hamiltonovské grafy.
+\item Rovinné grafy, barvení grafů.
+\end{itemize}
+
+Kružníce $C_n$, cesta $P_n$.
+Sled = vrchol -- hrany, tah = sled bez opakovani hran.
+Slabá, silná souvislost pro orientované grafy:
+cesta jedním směrem, oběma.
+
+Vrcholova $n$-souvislost je silnejsi nez hranova.
+
+TODO: jake jsou souvislosti v klikach?
+
+Most, artikulace (kriticky vrchol).
+Blokovy graf: artikulace a tak. Blokovy graf je strom.
+
+Hranove pokryti: kazdy vrchol v aspon jedne.
+Disjunktni hrany: parovani.
+$k$-faktor: podgraf s konstantnim stupnem $k$.
+Princip sudosti: $\sum\deg(v)=2|E|$
+Skóre: posloupnost stupňů.
+
+Věta o skóre: $D$ je SETRIDENE skore grafu prave kdyz $D'$
+je skode grafu, kde $d_i'=d_i$ pro $i<n-d_n$,
+$d_i'=d_i-1$ pro $i\geq n-d_n$.
+
+Metrika: nejkratsi cesty.
++- hrana, +- vrchol, deleni hrany.
+
+Nakresleni.
+Matice sousednosti: $V\times V$.
+Z ni: matice vzdalenosti.
+
+Laplaceova matice: $\deg u$ pro $u=v$, $-1$ pro $\{u,v\}\in E$,
+jinak 0. Hodi se k pocitani poctu koster.
+
+Matice incidence: radky jsou vrcholy, sloupce hrany.
+-1 kdyz zacina, +1 kdyz konci hrana, 0 jinak.
+
+Seznam sousedu. Seznam hran.
+
+Strom: souvisly graf bez kruznice.
+
+Veta: pocet stromu je $n^{n-2}$.
+
+To same: souvisly/acyklicky a $e=v-1$.
+Maximalni bez kruznic. Minimalni souvisly.
+Jednoznacne cesty.
+
+TODO: Pocet koster a Laplaceova matice
+
+Eulerovske grafy.
+
+Vrcholove X-souvisly $\leftrightarrow$ X vrcholove disjunktnich cest.
+2-souvisly $\leftrightarrow$ vytvoritelny z $K_3$ delenim a pridavanim hran.
+
+Oblouk: proste zpojite zobrazeni z $(0,1)\imp\R^2$.
+Stena grafu.
+
+Jordanova veta o kruznici: topologicka kruznice deli rovinu na vnitrek a vnejsek
+se spolecnou hranici (uzavr. krivka neprotinajici sebe sama = oblouk, co mu
+splyvaji konce).
+
+Kuratowskeho veta: rovinnost == nema podgraf isomorfni deleni $K_{3,3}$, $K_5$.
+
+Euleruv vzorec: $|V|-|E|+s=2$.
+
+2-souvisly RG ma hranice libovolne stejny kruznice.
+
+Maximalni pocet hran RG: $|E|\leq 3|V|-6$, rovnost pro maximalni RG.
+Kdyz nema trojuhelnik, musi by $|E|\leq |V|-4$.
+
+Multigraf (nasobne hrany).
+Geometricky dual grafu.
+$\chi$ = vrcholova barevnost.
+Dual RG je RG.
+Barveni mapy na barveni grafu.
+RG maji chiralitu $\leq 5$.
+
+Dijkstra: $O(n\log n+m)$ pres Fib haldy.
+BFS, DFS, Kruskaluv algoritmus, Jarnikuv algoritmus, toposort.
+
+Mengerova veta, dualita toku a rezu

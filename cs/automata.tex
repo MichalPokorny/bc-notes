@@ -1,1 +1,46 @@
+\begin{itemize}
+\item Chomského hierarchie, třídy automatů a gramatik, determinismus a
+nedeterminismus.
+\item Uzávěrové vlastnosti tříd jazyků.
+\end{itemize}
+
+Konečný automat: abeceda, přechodová funkce, stavy, koncové stavy.
+
+Nerodova veta: regulární jazyk $\leftrightarrow \e$ prava kongruence konecneho
+indexu $\sim$ t.z. $L$ je sjednoceni nejakych trid rozkladu $X/\sim$.
+
+Prava kongruence: ekvivalence na $X^*$ t.z. $u\sim w\rightarrow uw\sim vw$.
+
+Pumping lemma: pro regularni jazyk $\e n\in\N \a z\in L (|z|\geq n)$ lze
+psat jako $l=uvw$, kde $|uv|\leq n$, $|v|\geq 1$ a $\a i: uv^i w\in L$.
+
+Homomorfismus $\imp$ ekvivalentni automaty. Redukt: jednoznacny
+ekvivalentni automat bez nedosazitelnych a ekvivalentnich stavu.
+
+Operace: mnozinove, zretezeni, iterace, otoceni, kvocienty ($L_2\\ L_1=\{u:uv\in
+L_1, u\in L_2\}$ levy, pravy $/: v\in L_2$), derivace (=kvocient podle jednosl.
+jazyka). Reg. jazyky jsou na to uzavrene.
+
+Trida reg. jazyku: obsahuje $\emptyset, \a x\in\Sigma: x$, uzavrena na
+sjednoceni, iteraci a zretezeni. Kleene: regulární $\leftrightarrow$
+rozpoznatelný konečným automatem.
+
+Regulární výrazy: obsahuje $\emptyset, \lambda, x\in\Sigma$, uzavreno na
+$+,\cdot,\ ^*$. Hodnota = regularni jazyk.
+
+Dvoucestny automat: zaroven reknu jestli ted chci vlevo nebo vpravo.
+
+Zasobnikovy automat: $(Q,X,Y,\delta,q_0,Z_0,F)$: $Y$ na zasobniku, $Z_0$ poc.
+symbol, $\delta:Q\times (X\cup\{\lambda\})\times Y\rightarrow P(Q\times Y^*)$.
+Nahradi vrchol zasobniku, ale necte pokazde vstupni symboly.
+Prijimani: prazdnym zasobnikem ($F=\emptyset$) nebo koncovym stavem.
+
+Prijem koncovym stavem a zasobnikem jde mezi sebou prevadet.
+TODO: tomu moc neverim...
+
+Prepisovaci system.
+Kazda BKG jde rozpoznat prazdnym zasobnikem.
+Pro kazdy zás. automat existuje BKG.
+TODO: tomu furt moc neverim...
+
 TODO: automaty a jazyky

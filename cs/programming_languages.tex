@@ -1,0 +1,77 @@
+\begin{itemize}
+\item Principy implementace objektove orientovanych jazyku, behova podpora.
+\item Oddeleny preklad, sestaveni, rizeni prekladu.
+\item Pojmy a principy objektoveho navrhu.
+\item Genericke programovani a knihovny, sablony a generika, kompilacni polymorfismus.
+\item Neproceduralni programovani.
+\end{itemize}
+
+4 kusy pameti: code, data, stack, heap
+data segment: staticke promenne inicializovane na non-NULL
+BSS: null-inicializovane staticke promenne
+
+proceduralni programovani; strukturovane programovani
+
+control flow: skok, if-else, cyklus, atd.
+
+preruseni, signaly, vyjimky
+
+zasobnik: return pointer, argumenty, navratova hodnota, (pascal) ukazatel na
+semanticky nadrizenou funkci == aktivacni zaznam
+
+stack roste smerem dolu (SP)
+
+continuation: abstraktni reprezentace stavu control.
+coroutine
+
+Organizace pameti:
+\begin{itemize}
+\item Kodovy segment: RO, pevna delka
+\item Data segment: staticka data, konstanty
+\item Heap
+\item Volna pamet: z jedne strany zaplnuje zasobnik, z druhe halda
+\item Stack
+\end{itemize}
+
+Alokace pameti na heapu: first-fit, next-fit, buddy system
+
+Program je z modulu spojenych linkerem.
+
+Staticke linkovani.
+Dynamicke linkovani: zavedeni dynamicke knihovny.
+A) odkazy na funkce se zaplni spravnymi adresami, nebo
+B) indirekce pres pointer. Prvni je pomalejsi pri zavedeni, druhe pri volani.
+
+Makefile: MAKRO = HODNOTA; \${MAKRO}
+
+Vyhody OOP proti pouze proceduralnimu programovani se zapouzdrenim:
+lepsi oddeleni (viditelnost v packagi), protected, final, etc.
+
+C++: implicitni konstruktor, kopirovaci konstruktor
+
+implementation inheritance / interface inheritance
+
+diamond inheritance: kdyz pouziju ': public virtual trida', zajisti se, ze bude
+jenom jedna kopie.
+
+vtable ptr
+
+polymorfismus: chovam se podle toho jaky je fakt muj typ
+
+neproceduralni programovani; deklarativni: SQL. logicke, funkcionalni.
+typovane funk. jazyky: Haskell, netypovane: Lisp, Scheme
+
+Prolog: Hornovy klauzule, MGU.
+procedury: fakta/pravidla
+rez: !; Haskell: referencni transparentnost (stejny vyraz ma vzdy stejnou
+hodnotu)
+
+C++: genericke programovani compile-time
+sablony vs. makra: sablony interpretuji, makra search-and-replacuji
+traits: \verb#is_void<void>#
+policy: \verb#template<typename output_policy> class Hello: public output_policy
+{ ... output_policy::Print }#
+
+Dynamicky polymorfismus: pointer na base, s nim neco udelej.
+Staticky polymorfismus: za prekladu:
+\verb#static_cast<Derived*>(this)->implementation()# -- za prekladu
