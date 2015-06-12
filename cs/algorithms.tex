@@ -14,7 +14,109 @@
 
 TODO: vsechno ostatni
 
-\subsection{DFT}
+$$f(n)=O(g(n)): \e c>0 \e n_0 \a n>n_0: 0\leq f(n)\leq c\cdot g(n)$$
+$$f(n)=\Omega(g(n)): \e c>0 \e n_0 \a n>n_0: 0\leq c\cdot g(n)\leq f(n)$$
+$$f(n)=\Theta(g(n)): \e c_1,c_2>0 \e n_0 \a n>n_0: 0\leq c_1\cdot g(n)\leq
+f(n)\leq c_2\cdot g(n)$$
+
+Amortizovana slozitost: prumerny cas na operaci. Agregace: spocitam $T(n)$ na
+celou posloupnost, cas bude $T(n)/n$.
+Ucetni: od operace neco vyberu, z toho zaplatim jeji provedeni, zbytek dam na
+ucet. Je-li operace drazsi nez obnos, vybereme z uctu. Zustatek nezaporny, obnos
+= amortizovana cena.
+
+Problemy: rozhodovaci, optimalizacni.
+Polynomialni preveditelnost rozhodovacich problemu: kladne prave kdyz je kladne,
+deterministicky preveditelne v P case.
+
+3-SAT: CNF klauzule delky 3.
+3-COL: 3-colorable graph?
+Nezavisla mnozina: existuje nezavisla mnozina velikosti K?
+
+3-SAT -> 3-COL.
+3-COL -> nezavisla mnozina (trivialni -- 3 kopie).
+nezavisla mnozina -> 3-SAT.
+Hamiltonovska kruznice, batoh, obchodni cestujici (rozhodovaci).
+
+Rozdel a panuj: $T(n)$ na zpracovani, $D(n)$ na rozdeleni na velikosti $n/c$,
+$S(n)$ na sjednoceni uloh velikosti $n/c$ na ulohu velkou $n$.
+Rovnice: $T(n)=D(n)+aT(n/c)+S(n)$, $\O(1)$ pro triviality.
+
+Substitucni metoda: uhodni a dokaz.
+
+Master theorem: $a\geq 1, c>1, d\in\R\geq 0, T$ neklesajici, pro $n=c^k$:
+$T(n)=aT(n/c)+\Theta(n^d)$. Pak kdyz $a\neq c^d$, tak
+$T(n)=\Theta(n^{\max\{\log_c a, d\}})$, jinak $T(n)=\Theta(n^d \log_c n)$.
+
+Karatsuba algoritmus: $\Theta(n^{\log_2 3})$.
+Strassenuv (na matice): $\Theta(n^{\log_2 7})$
+
+$k$-ty nejmensi v linearnim case: mediany lzimedianu (oddelim aspon 3/10,
+hezky graficky dukaz).
+
+Red-black: (externi uzel/koren jsou cerne), cerveny vrchol ma cerne
+syny a otce, cesta od vrcholu k listum ma stejne cernych uzlu.
+
+TODO: insertion, deletion
+
+AVL stromy: rozdil vysky leveho a praveho je $\leq 1$.
+Velikost roste pres Fibonacciho posloupnost.
+Vyvazovani pres rotace.
+
+TODO: insertion, deletionstromy
+
+Binarni halda. Fibonacciho halda: amort. O(1) na Insert, DecreaseKey,
+odebrani minima O(log n).
+
+TODO: na wiki je algoritmus na optimalni binarni vyhledavaci stromy
+
+TODO: detaily hashovani (ocekavane pocty testu atd.)
+
+Univerzalni hashovani: treba $h_{a,b}(x)=((ax+b)\bmod |U|) \bmod m$
+Perfektni hashovaci funkce
+
+\subsection{Sekvencni trideni, porovnavaci algoritmy, prihradkove trideni,
+tridici site}
+Selection sort, insertion sort, bubble sort, heap sort, merge sort, quicksort
+($\Theta(n^2)$ worstcase, idealne i prumerne $\Theta(n\log n)$).
+
+Radix sort, counting sort.
+
+Tridici site: bitonicka posloupnost: po spojeni do cyklu ma 2 monotonni useky.
+
+Komparator.
+
+Tridici sit. Bitonicke trideni: ma hloubku $\O(\log^2 n)$.
+
+TODO: tridici sit -- bitonicke trideni
+
+\subsection{Grafove algoritmy - DFS, BFS, souvislost, topologicke trideni,
+nejkratsi cesta, kostra grafu, toky v sitich}
+
+Toposort: najdi vrchol kam nevedou hrany, prirad nejvyssi volne cislo, odeber
+ze seznamu (pry to da $\Theta(n(m+n))$).
+Rychly algoritmus: DFS, vem je v poradi klesajicich casu opusteni.
+
+TODO: hledani nejkratsi cesty
+
+Hledani kriticke cesty: najdi topousporadani, v nem relaxuj vsechny vrcholy.
+
+Dijkstruv algoritmus (v nezapornem ohodnoceni hran):
+relaxuj nejblizsi vrchol; bude trvat $O((m+n) log n)$.
+
+Bellman-Fordův algoritmus: funguje i s nezápornými hranami.
+Pro všechny vrcholy: relaxuj přes všechny hrany.
+Pak zkontroluj, že tam nejsou záporné cykly.
+
+Nejkratsi cesty pro vsechny dvojice: Floyd-Warshall. 
+
+\subsection{Tranzitivni uzaver}
+TODO
+
+\subsection{Algoritmy vyhledavani v textu}
+TODO
+
+\subsection{Algebraicke algoritmy - DFT, Eukleiduv algoritmus, RSA}
 
 Vyhodnoceni polynomu v bodech $\omega^0\ldots\omega^{n-1}$, kde
 $n$ je stupen polynomu BUNO $2^k$. Jsou to mocniny komplexni odmocniny.
@@ -24,3 +126,5 @@ diky tomu, ze FFT je linearni zobrazeni, $\Omega_{ij}=\omega^{ij}$,
 $\Omega^{-1}=\frac{1}{n}\bar{\Omega}$, takze jenom podel $n$ a komplexne sdruz.
 
 TODO: RSA, aproximacni algoritmy
+
+\subsection{Aproximacni algoritmy}
