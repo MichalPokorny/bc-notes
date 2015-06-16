@@ -5,4 +5,117 @@
 \item Normální tvary výrokových formulí, prenexní tvary formulí predikátové logiky.
 \end{itemize}
 
-TODO
+Jazyk: $x_i$, $\vee\wedge$, $()$, $\a\e$, $R$, $f$, $(=)$ optionally
+
+Logický systém: jazyk + axiomy + odvozovací pravidla.
+
+Termy: individua, formule: tvrzení
+
+VL: prvovýroky, spojky, závorky
+
+Stačí $\neg,\imp,\a$.
+Definice formule, termu.
+
+Volný, vázaný výskyt; volná proměnná
+Otevřená: nemá vázanou proměnnou, uzavřená/sentence: nemá volnou proměnnou.
+
+Pravdivostní ohodnocení: ohodnotí prvovýroky, z něho rekurzí pravdivostní
+hodnota formulí.
+Realizace jazyka v PL: individua v $M$, relace, funkce
+
+Definice tautologie (PL): pravdivá při liboovolném ohodnocení proměnných
+($\vDash A$)
+Pravdivá formule při ohodnocení: rekurzivně definované.
+Model, tautologický důsledek $T\vDash$ (každý model $T$ to modeluje taky).
+
+Formální systém (Hilbertův kalkul): modus ponens, plus axiomy:
+1) $A\imp(B\imp A)$, 2) $(A\imp(B\imp C))\imp((A\imp B)\imp(A\imp C))$,
+3) $(A\imp B)\imp(\neg B\imp\neg A)$
+
+Substituce (termu za proměnné). Instance formule.
+
+Formální systém VL: přidej axiomové schema specifikace $(\a x)A\imp A_x[t]$,
+přeskoku $(\a x)(A\imp B)\imp(A\imp (\a x)B)$ když $x$ nemá volný výskyt v $A$,
+pravidlo generalizace: $A \longrightarrow (\a x) A$.
+S rovností: přidej symbol a další 3 axiomy. TODO: které?
+
+Pravidlo zavedení $\a$: $\vdash A\imp B$ a $x$ nemá VV v $A$, tak $\vdash A\imp
+(\a x)B$.
+Zavedení $\e$: $\vdash A\imp B$ a $x$ nemá VV v $B$, tak $\vdash (\e x)A\imp B$.
+Distribuce: když $\vdash A\imp B$, tak $\vdash (Qx)A\imp (Qx)B$.
+
+Důkaz: Hilbertův kalkul, nebo tablo metoda.
+
+Věta o dedukci: $T\vdash A\imp B$ právě když $T,A\vdash B$.
+($A$ musí být uzavřená -- indukce: pravidlo generalizace??? wtf?)
+
+Mnozina formuli VL je splnitelna prave kdyz je bezesporna.
+
+Rekurzivní funkce: algoritmicky vyčíslitelné. Rekurzivní množina: ta, co má
+rekurzivní $\chi$ fci.
+
+Ve spocetnem jazyku jdou ocislovat formule. Thm(T) = kody dokazatelnych formuli.
+Rozhodnutelna teorie: Thm(T) je rekurzivni.
+
+Churchove veta o nerozhodnutelnosti predikatove logiky: kdyz mam 1 konstantu,
+1 fcni symbol arity >0 a "pro kazde prirozene cislo spocetne mnoho predikatovych
+symbolu" (wtf?), pak je mnozina kodu uzavrenych pravdivych formuli
+nerozhodnutelna.
+
+Popisy aritmetiky:
+
+Robinsonova aritmetika: $S(x)\neq 0$, $S(x)=S(y)\leftrightarrow x=y$,
+$x\neq 0\imp (\e y)(x=S(y))$, $x+0=x$, $x+S(y)=S(x+y)$, $x\cdot 0=0$,
+$x\cdot S(y)=(x\cdot y)+x$, $x\leq y\leftrightarrow(\e z)(z+x=y)$
+
+Peanova aritmetika: nema axiom 3 ($x\neq 0\imp(\e y)(x=S(y))$), plus schema
+axiomu indukce: $(\varphi(0)\wedge (\a x)(\varphi(x)\imp\varphi(S(x))))\imp(\a
+x)(\varphi(x))$
+
+Úplná aritmetika: axiomy jsou všechny uzavřené formule platné ve standardním
+modelu $\N$.
+
+$Q$ (Robinsonova) $\subseteq P$ (axiomy jsou rekurzivni mnozina) $\subseteq
+Th(\N)$ (neni rekurzivne axiomatizovatelna)
+
+Churchova veta o nerozhodnutelnosti aritmetiky: každé bezesporné rozšíření
+Robinsonovy aritmetiky $Q$ je nerozhodnutelna teorie. (TODO: WTF?!)
+
+Godel-Rosserova věta o neúplnosti aritmetiky: žádné bezesporné a rekurzivně
+axiomatizovatelné rozšíření $Q$ není úplná teorie.
+
+TODO: tyhle rozhodnutelnosti/axiomatizovatelnosti radsi jeste jednou projit.
+
+Věta o kompaktnosti a úplnosti výrokové a predikátové logiky.
+
+O korektnosti výrokové logiky: $T\vdash A \Rightarrow T\vDash A$ (co je
+dokazatelné, je pravdivé).
+Má-li teorie model, je bezesporná.
+Věta o spoustě věcí: sporná právě je-li dokazatelný spor. $T,\neg A$ je sporná
+právě když $T\vdash A$. Kdyz je $T$ maximalni bezesporna teorie, tak
+$T\vdash A \Leftrightarrow A\in T \Leftrightarrow T,A$ je bezesporná.
+Ohodnoceni $e$ takové $e(p)=1 \Leftrightarrow p\in T$ pro každou výrokovou
+proměnnou $p$, je jediný model $T$.
+
+Bezesporná teorie má maximální bezesporné rozšíření.
+
+Kompaktnost: teorie je pravdivá právě když je pravdivá každá konečná podmnožina.
+
+Úplnost: $T\vdash A\Leftrightarrow T\vDash A$ platí pro každou teorii $T$ a její
+formuli $A$. Důsledkem je bezespornost výrokové logiky a dokazatelné v ní jsou
+právě tautologie. WTF.
+
+V PL má každá bezesporná teorie model kardinality nejvýš $\|L\|$.
+Formule PL je dokazatelná právě když je pravdivá.
+Teorie má model (je splnitelná) právě když každá konečná část má model.
+
+Normální tvary:
+DeMorganovy zákony: $\neg(A\wedge B)\leftrightarrow(\neg A\vee\neg B)$;
+	$\neg(A\vee B)\leftrightarrow(\neg A\wedge\neg B)$
+
+Hornovská klauzule: nejvýš jeden pozitivní literál.
+
+DeMorganovými zákony a distributivitou jde sestrojit CNF, DNF formule.
+
+Prenexní tvary: kvantifikátory, vevnitř otevřené jádro.
+Skolemizace: náhrada existenčních kvantifikátorů funkcí, otevření axiomů.

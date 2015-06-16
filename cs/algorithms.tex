@@ -102,19 +102,71 @@ TODO: hledani nejkratsi cesty
 Hledani kriticke cesty: najdi topousporadani, v nem relaxuj vsechny vrcholy.
 
 Dijkstruv algoritmus (v nezapornem ohodnoceni hran):
-relaxuj nejblizsi vrchol; bude trvat $O((m+n) log n)$.
+relaxuj nejblizsi vrchol; bude trvat $O((m+n) \log n)$. Potrebuje nezaporne
+hrany.
 
 Bellman-Fordův algoritmus: funguje i s nezápornými hranami.
 Pro všechny vrcholy: relaxuj přes všechny hrany.
-Pak zkontroluj, že tam nejsou záporné cykly.
+Pak zkontroluj, že tam nejsou záporné cykly. Potrebuje nezaporne cykly.
 
-Nejkratsi cesty pro vsechny dvojice: Floyd-Warshall. 
+Nejkratsi cesty pro vsechny dvojice: Floyd-Warshall.
+
+Hledání minimální kostry: Kruskal: setřiď hrany, slívej komponenty.
+Na setřídění hran $\Theta(m\log n)$, zbytek na union-find ($\Theta(\log n)$ na
+Union kdyz precislovavam vzdycky mensi).
+
+Jarník/Prim: postupně přidávej vrcholy ke kostře. Reprezentuju si jako
+haldu, dostanu $\Theta(m\log n)$.
+
+Borůvka: každá komponenta separátně popadne nejmenší hranu. Použiju $\log N$
+fází, každá může zabrat klidně až $\Theta(M)$.
+
+Toky: $z$,$s$,$c:E\imp\R^+$, definice toku. Přebytek = kolik se ve vrcholu
+ztratí.
+
+Ford-Fulkerson: hledá zlepšující cestu z $z$ do $s$, ze pro hrany od zdroje je
+$t<c$ a proti smeru $t>0$, tak muzu poslat po smeru rezervu. Muze se zacyklit
+pro $\R$. Vysledky rez = mnozina vrcholu, kam vede zlepsitelna cesta.
+TODO: jak dlouho bude trvat?
+
+Dinic: vyber vždy nejkratší zlepšitelnou cestu. Síť rezerv: $(v,w)$ pro
+$r=c(v,w)-t(v,w)+t(w,v)>0$.
+1) vyhoď hrany mimo nejkratší cestu $z\imp s$,
+2) zlepši tok podle nejkratší cesty,
+3) vyhoď nové slepé cesty,
+4) opakuj dokud nevyčerpám cesty dané délky.
+
+Fází je max. $n$, každá dá maximálně $m$ cest, nalezení cesty trvá $\Theta(n)$,
+vyhazování slepých hran je $\Theta(m)$ za fázi. Trvá tedy $\Theta(n^2 m)$.
+
+Goldbergův algoritmus ("algoritmus vlny"):
+v průběhu výpočtu nemám tok, ale vlnu (ze zdroje teče $\geq$ max. tok),
+tedy dovolím přebytky. Pamatuju si výšku $h(v)$, mám síť rezerv.
+Začátek: $h(v)=0, h(z)\gets n, t(e)=0 \a e, \delta(v)=0 \a v$
+
+1) ze zdroje převeď maximum do sousedních vrcholů ($t(e)=c(e)$ po směru)
+2) dokud existuje $v$ s $\delta>0$:
+	Pokud existuje $(v,w)$ nebo $(w,v)$, ze $r(e)>0$ (v danem smeru)
+	a $h(v)\geq h(w)$, pak preved $\min(\delta(v), r(e))$ z $v$ do $w$.
+	Jinak zvyš $h(v)$ o 1.
+
+Invariant: $r(e=(v,w))>0\imp h(v)\leq 1+h(w)$.
+Zdroj má výšku $n$ a stok $0$, takze nekde prekonava cesta $-2$, proto tok nekde
+nema rezervu.
+Nelze zvedat donkonecna: nejvyssi mozna vyska je $h(v)=2n-1$, musi do nej vest v
+siti rezerv cesta do zdroje, po ceste se vyska meni o 1.
+
+TODO: Složitost je $\Theta(n^2\cdot m)$.
 
 \subsection{Tranzitivni uzaver}
-TODO
+Tranzitivni uzaver: bud $N$-krat DFS v $\Theta(n(n+m))$, nebo Floyd-Warshall,
+ktery potrebuje $\Theta(n^3)$.
 
 \subsection{Algoritmy vyhledavani v textu}
-TODO
+Rabin-Karp: rolling hashes
+
+Aho-Corasick: vyrob si automat. Ze slov si vyrobim "trie-strom", backlinky
+vybuduju postupne bootstrapem. (TODO: neni tam jeste nejaky super trik?)
 
 \subsection{Algebraicke algoritmy - DFT, Eukleiduv algoritmus, RSA}
 
@@ -125,6 +177,12 @@ $P(x)=S(x^2)+xL(x^2), P(-x)=S(x^2)-xL(x^2)$. Inverzni FFT se provede
 diky tomu, ze FFT je linearni zobrazeni, $\Omega_{ij}=\omega^{ij}$,
 $\Omega^{-1}=\frac{1}{n}\bar{\Omega}$, takze jenom podel $n$ a komplexne sdruz.
 
-TODO: RSA, aproximacni algoritmy
+Eukleiduv algoritmus: potrebuje $\O(\log \max{X,Y})$ průchodů hlavní smyčkou
+(maxima se dosáhne když tam strčíme následující F čísla).
 
-\subsection{Aproximacni algoritmy}
+Diffie-Hellman protokol.
+
+Algoritmus RSA: 1) vyber $p,q$ velká prvočísla, $n\gets p\cdot q$.
+2) vyber $e<\varphi(n)$ t.z. $e\perp \varphi(n)=(p-1)(q-1)$.
+3) $d:=e^{-1}\pmod n$.
+Zašifrování: $c=m^e$, dešifrování: $m=c^d$.

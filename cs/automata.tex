@@ -36,11 +36,38 @@ Nahradi vrchol zasobniku, ale necte pokazde vstupni symboly.
 Prijimani: prazdnym zasobnikem ($F=\emptyset$) nebo koncovym stavem.
 
 Prijem koncovym stavem a zasobnikem jde mezi sebou prevadet.
-TODO: tomu moc neverim...
+NEDETERMINISTICKY.
 
 Prepisovaci system.
-Kazda BKG jde rozpoznat prazdnym zasobnikem.
+Kazda BKG jde rozpoznat prazdnym zasobnikem, NEDETERMINISTICKY.
 Pro kazdy zás. automat existuje BKG.
-TODO: tomu furt moc neverim...
+
+Redukovana BKG: kazdy neterminal generuje nejake terminalni slovo,
+kazdy neterminal $X$ se da nejak vygenerovat ze startu jako $S\imp aXy$
+
+Greibachova normalni forma: vsechna pravidla $A\imp au$, kde $a$ je terminal
+a $u$ je string neterminalu. Ke kazdemu BKJ existuje GNF, ktera prijima
+$L-\lambda$.
+
+CNF: $X\imp YZ, X\imp a$. Existuje CNF co generuje $L-\lambda$
+
+Na GNF: 1) konverze do CNF, 2) eliminace leve rekurze
+Leva rekurze $A\imp A\alpha|\beta$ generuje $\beta\alpha^2$, libovolne to
+predelej.
+
+Chomského hierarchie: typ 0 = rekurzivně spočetné, (rekurzivní nejsou v
+hierarchii), typ 1 = lineárně omezené automaty (kontextové jazyky), typ 2 =
+bezkontextové jazyky, (deterministické bezkontextové nejsou v hierarchii),
+typ 3 = regulární.
+
+Každá BKG jde převést na nevypouštějící (tj. nemá $X\imp\lambda$), až na lambdu.
+
+Každá kontextová gramatika jde rozseparovat: pravidla buď $N+\imp N+$, nebo
+$N+\imp T+$
+
+KONTEXTOVA GRAMATIKA: $\alpha A\beta\imp\alpha\gamma\beta$
+
+Determinismus a nedeterminismus.
+Linearne omezeny automat: je nedeterministický.
 
 TODO: automaty a jazyky
