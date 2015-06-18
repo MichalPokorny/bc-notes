@@ -1,7 +1,9 @@
 \begin{itemize}
+\begin{understood}
 \item Casova slozitost algoritmu, slozitost v nejhorsim a prumernem pripade.
 \item Tridy slozitosti P a NP, prevoditelnost, NP-uplnost.
 \item "Rozdel a panuj" - aplikace a analyza slozitosti, dynamicke programovani.
+\end{understood}
 \item Binarni vyhledavaci stromy, vyvazovani, haldy.
 \item Hashovani.
 \item Sekvencni trideni, porovnavaci algoritmy, prihradkove trideni, tridici site.
@@ -14,10 +16,12 @@
 
 TODO: vsechno ostatni
 
+\begin{understood}
 $$f(n)=O(g(n)): \e c>0 \e n_0 \a n>n_0: 0\leq f(n)\leq c\cdot g(n)$$
 $$f(n)=\Omega(g(n)): \e c>0 \e n_0 \a n>n_0: 0\leq c\cdot g(n)\leq f(n)$$
 $$f(n)=\Theta(g(n)): \e c_1,c_2>0 \e n_0 \a n>n_0: 0\leq c_1\cdot g(n)\leq
 f(n)\leq c_2\cdot g(n)$$
+\end{understood}
 
 Amortizovana slozitost: prumerny cas na operaci. Agregace: spocitam $T(n)$ na
 celou posloupnost, cas bude $T(n)/n$.
@@ -26,8 +30,10 @@ ucet. Je-li operace drazsi nez obnos, vybereme z uctu. Zustatek nezaporny, obnos
 = amortizovana cena.
 
 Problemy: rozhodovaci, optimalizacni.
+\begin{understood}
 Polynomialni preveditelnost rozhodovacich problemu: kladne prave kdyz je kladne,
 deterministicky preveditelne v P case.
+\end{understood}
 
 3-SAT: CNF klauzule delky 3.
 3-COL: 3-colorable graph?
@@ -38,10 +44,6 @@ Nezavisla mnozina: existuje nezavisla mnozina velikosti K?
 nezavisla mnozina -> 3-SAT.
 Hamiltonovska kruznice, batoh, obchodni cestujici (rozhodovaci).
 
-Rozdel a panuj: $T(n)$ na zpracovani, $D(n)$ na rozdeleni na velikosti $n/c$,
-$S(n)$ na sjednoceni uloh velikosti $n/c$ na ulohu velkou $n$.
-Rovnice: $T(n)=D(n)+aT(n/c)+S(n)$, $\O(1)$ pro triviality.
-
 Substitucni metoda: uhodni a dokaz.
 
 Master theorem: $a\geq 1, c>1, d\in\R\geq 0, T$ neklesajici, pro $n=c^k$:
@@ -51,8 +53,10 @@ $T(n)=\Theta(n^{\max\{\log_c a, d\}})$, jinak $T(n)=\Theta(n^d \log_c n)$.
 Karatsuba algoritmus: $\Theta(n^{\log_2 3})$.
 Strassenuv (na matice): $\Theta(n^{\log_2 7})$
 
+\begin{understood}
 $k$-ty nejmensi v linearnim case: mediany lzimedianu (oddelim aspon 3/10,
 hezky graficky dukaz).
+\end{understood}
 
 Red-black: (externi uzel/koren jsou cerne), cerveny vrchol ma cerne
 syny a otce, cesta od vrcholu k listum ma stejne cernych uzlu.
@@ -65,8 +69,10 @@ Vyvazovani pres rotace.
 
 TODO: insertion, deletionstromy
 
+\begin{understood}
 Binarni halda. Fibonacciho halda: amort. O(1) na Insert, DecreaseKey,
 odebrani minima O(log n).
+\end{understood}
 
 TODO: na wiki je algoritmus na optimalni binarni vyhledavaci stromy
 
