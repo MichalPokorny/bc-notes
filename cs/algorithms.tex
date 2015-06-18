@@ -83,8 +83,10 @@ Perfektni hashovaci funkce
 
 \subsection{Sekvencni trideni, porovnavaci algoritmy, prihradkove trideni,
 tridici site}
-Selection sort, insertion sort, bubble sort, heap sort, merge sort, quicksort
-($\Theta(n^2)$ worstcase, idealne i prumerne $\Theta(n\log n)$).
+\begin{understood}
+Selection sort, insertion sort, bubble sort, heap sort, merge sort
+\end{understood}
+Quicksort ($\Theta(n^2)$ worstcase, idealne i prumerne $\Theta(n\log n)$).
 
 Radix sort, counting sort.
 
@@ -176,19 +178,23 @@ vybuduju postupne bootstrapem. (TODO: neni tam jeste nejaky super trik?)
 
 \subsection{Algebraicke algoritmy - DFT, Eukleiduv algoritmus, RSA}
 
+\begin{understood}
 Vyhodnoceni polynomu v bodech $\omega^0\ldots\omega^{n-1}$, kde
 $n$ je stupen polynomu BUNO $2^k$. Jsou to mocniny komplexni odmocniny.
 Da se v $\Theta(N\log N)$ vyhodnotit, diky tomu ze to rozdelime na
 $P(x)=S(x^2)+xL(x^2), P(-x)=S(x^2)-xL(x^2)$. Inverzni FFT se provede
 diky tomu, ze FFT je linearni zobrazeni, $\Omega_{ij}=\omega^{ij}$,
 $\Omega^{-1}=\frac{1}{n}\bar{\Omega}$, takze jenom podel $n$ a komplexne sdruz.
+\end{understood}
 
 Eukleiduv algoritmus: potrebuje $\O(\log \max{X,Y})$ průchodů hlavní smyčkou
 (maxima se dosáhne když tam strčíme následující F čísla).
 
+\begin{understood}
 Diffie-Hellman protokol.
 
 Algoritmus RSA: 1) vyber $p,q$ velká prvočísla, $n\gets p\cdot q$.
 2) vyber $e<\varphi(n)$ t.z. $e\perp \varphi(n)=(p-1)(q-1)$.
 3) $d:=e^{-1}\pmod n$.
 Zašifrování: $c=m^e$, dešifrování: $m=c^d$.
+\end{understood}

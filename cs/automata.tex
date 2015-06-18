@@ -4,10 +4,12 @@ nedeterminismus.
 \item Uzávěrové vlastnosti tříd jazyků.
 \end{itemize}
 
+\begin{understood}
 Konečný automat: abeceda, přechodová funkce, stavy, koncové stavy.
 
 Nerodova veta: regulární jazyk $\leftrightarrow \e$ prava kongruence konecneho
 indexu $\sim$ t.z. $L$ je sjednoceni nejakych trid rozkladu $X/\sim$.
+\end{understood}
 
 Prava kongruence: ekvivalence na $X^*$ t.z. $u\sim w\rightarrow uw\sim vw$.
 
@@ -21,12 +23,14 @@ Operace: mnozinove, zretezeni, iterace, otoceni, kvocienty ($L_2\\ L_1=\{u:uv\in
 L_1, u\in L_2\}$ levy, pravy $/: v\in L_2$), derivace (=kvocient podle jednosl.
 jazyka). Reg. jazyky jsou na to uzavrene.
 
+\begin{understood}
 Trida reg. jazyku: obsahuje $\emptyset, \a x\in\Sigma: x$, uzavrena na
 sjednoceni, iteraci a zretezeni. Kleene: regulární $\leftrightarrow$
 rozpoznatelný konečným automatem.
 
 Regulární výrazy: obsahuje $\emptyset, \lambda, x\in\Sigma$, uzavreno na
 $+,\cdot,\ ^*$. Hodnota = regularni jazyk.
+\end{understood}
 
 Dvoucestny automat: zaroven reknu jestli ted chci vlevo nebo vpravo.
 
@@ -34,6 +38,8 @@ Zasobnikovy automat: $(Q,X,Y,\delta,q_0,Z_0,F)$: $Y$ na zasobniku, $Z_0$ poc.
 symbol, $\delta:Q\times (X\cup\{\lambda\})\times Y\rightarrow P(Q\times Y^*)$.
 Nahradi vrchol zasobniku, ale necte pokazde vstupni symboly.
 Prijimani: prazdnym zasobnikem ($F=\emptyset$) nebo koncovym stavem.
+
+TODO: pumping lemma pro bezkontextove jazyky
 
 Prijem koncovym stavem a zasobnikem jde mezi sebou prevadet.
 NEDETERMINISTICKY.
@@ -65,9 +71,22 @@ Každá BKG jde převést na nevypouštějící (tj. nemá $X\imp\lambda$), až 
 Každá kontextová gramatika jde rozseparovat: pravidla buď $N+\imp N+$, nebo
 $N+\imp T+$
 
-KONTEXTOVA GRAMATIKA: $\alpha A\beta\imp\alpha\gamma\beta$
+KONTEXTOVA GRAMATIKA: $\alpha A\beta\imp\alpha\gamma\beta$. Ekvivalentni
+s nezkracujicimi (nevypoustejicimi) gramatikami.
 
 Determinismus a nedeterminismus.
 Linearne omezeny automat: je nedeterministický.
 
 TODO: automaty a jazyky
+
+Uzaverove vlastnosti:
+L3 uzavrene na skoro vsechno.
+L2 uzavrene na $\cup$, $\cap$ s L3, substituce, inverzni homomorfismus,
+neuzavrene na $\cap$, $\overline{L}$.
+Deterministicke BKJ: neuzavrene na sjednoceni (jasne), taky ne na $\cap$ ($Z_1=a^i
+b^i c^j, Z_2=a^j b^i c^i$), neuzavrene na substituci (vezmi $1Z_1\cup
+0Z_2\longrightarrow_{1\leftarrow 0}$).
+Deterministicke BKJ uzavrene na doplnek: prohod koncove stavy. Donut k precteni
+celeho slova: pres "podlozku" (dalsi problem: pulzovani/nekonecny zasobnik --
+citac [TODO WTF?], motani se za koncem -- pamatuj si prosel-li jsi konc. stavem).
+(Pro BKJ se da vytahnout spor z neuzavrenosti na $\cap$.)
